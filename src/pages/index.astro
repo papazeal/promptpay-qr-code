@@ -1,0 +1,61 @@
+---
+import "/src/styles/global.css";
+import App from "../components/App.svelte";
+import FeaturesList from "../components/FeaturesList.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>PromptPay QR Code Generator • สร้าง QR Code พร้อมเพย์</title>
+    <meta
+      name="description"
+      content="สร้าง QR Code พร้อมเพย์สำหรับรับเงินได้ง่ายๆ ทั้งบุคคลและธุรกิจ  ใช้งานสะดวก หน้าตาเรียบง่าย ไม่ต้องสมัครสมาชิก ก็สร้างคิวอาร์ได้ทันที"
+    />
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+  </head>
+  <body class="bg-slate-100 antialiased">
+    <div class="p-8 print:p-0 max-w-4xl mx-auto">
+      <div class="text-center print:hidden mb-10">
+        <div class="inline-flex text-left gap-4 items-center">
+          <div class="text-center">
+            <h1 class="text-2xl font-semibold">PromptPay QR Code</h1>
+            <div class="text-gray-500">สร้าง QR Code พร้อมเพย์</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="max-w-md mx-auto">
+        <App client:load />
+      </div>
+
+      <div class="flex justify-center mt-12 text-lg">
+        <FeaturesList
+          items={[
+            "อัตราส่วนภาพถ่าย 4x6",
+            "รองรับทุกขนาดหน้าจอ",
+            "สวยงาม ใช้ง่าย รวดเร็ว",
+          ]}
+          class=""
+        />
+      </div>
+
+      <div class="text-center mt-12 text-gray-500 flex flex-col gap-2">
+        <!-- Place this tag where you want the button to render. -->
+        <a
+          class="github-button"
+          href="https://github.com/papazeal/promptpay-qr-code"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star papazeal/promptpay-qr-code on GitHub">Star</a
+        >
+        <div>create by <a href="https://papazeal.com">papazeal.com</a></div>
+      </div>
+    </div>
+  </body>
+</html>
