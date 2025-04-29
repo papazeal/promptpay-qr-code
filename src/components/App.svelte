@@ -69,9 +69,9 @@
       />
     </div>
   </div>
-  <div class="text-center p-8 pt-0 bg-white">
+  <div class="text-center p-8 pt-0 bg-white sm:-mt-12">
     <button
-      class="inline-flex gap-3 sm:text-lg items-center bg-green-100 px-4 py-2 rounded-full -mt-4 cursor-pointer hover:bg-green-200"
+      class="inline-flex gap-3 sm:text-lg items-center bg-green-100 px-4 py-2 rounded-full cursor-pointer hover:bg-green-200"
       onclick={() => download()}
     >
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="h-5"
