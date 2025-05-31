@@ -1,0 +1,22 @@
+---
+import generatePayload from "promptpay-qr";
+import QRCode from "qrcode";
+
+export const prerender = false;
+
+const id = Astro.url.searchParams.get("id") || "";
+const amount = parseFloat(Astro.url.searchParams.get("amount") || "");
+let dataUrl = await QRCode.toDataURL(generatePayload(id, { amount: amount }), {
+  width: 600,
+  height: 600,
+});
+const matches = dataUrl.match(/^data:(.+);base64,(.+)$/);
+const base64Data = matches[2];
+const buffer = Buffer.from(base64Data, "base64");
+
+return new Response(buffer, {
+  headers: {
+    "Content-Type": "image/png",
+  },
+});
+---
